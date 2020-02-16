@@ -13,6 +13,11 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.io.InputStream
 
+/*
+* Using it as
+* Single source of truth principle
+* All fragments will be hosted in the MainActivity
+*/
 class MainViewModel : ViewModel(){
 
     private val repository = Repository()
@@ -23,8 +28,8 @@ class MainViewModel : ViewModel(){
 
     fun getDataFromFile(fileInputStream: InputStream) =
         CoroutineScope(Dispatchers.IO).launch {
+
             val productsFromFile = repository.getDataFromFile(fileInputStream)
-            Log.i(Constants.LOG_TAG, "Data from file $productsFromFile")
             withContext(Dispatchers.Main){
                 products.value = productsFromFile
             }

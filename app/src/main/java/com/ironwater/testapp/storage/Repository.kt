@@ -16,10 +16,9 @@ class Repository {
         val result = ArrayList<Product>()
 
         withContext(CoroutineScope(Dispatchers.IO).coroutineContext){
-            val jsonArray : JsonArray =
-                JsonParser.parseReader(
-                    InputStreamReader(inputStream, "UTF-8")
-                ).asJsonArray
+            val jsonArray : JsonArray = JsonParser
+                    .parseReader(InputStreamReader(inputStream, "UTF-8"))
+                    .asJsonArray
 
             val gson = GsonBuilder().create()
 

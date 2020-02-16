@@ -5,7 +5,7 @@ import android.graphics.Color
 import android.util.AttributeSet
 import android.widget.FrameLayout
 
-class LoadingIndicator(context: Context?, attrs: AttributeSet?) : FrameLayout(context!!, attrs) {
+class OverlayView(context: Context?, attrs: AttributeSet?) : FrameLayout(context!!, attrs) {
     init {
         setBackgroundColor(Color.BLACK)
         alpha = 0.8f
