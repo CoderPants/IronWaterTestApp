@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/action_favorite"
+        android:id="@+id/go_back_to_main"
         android:icon="@drawable/ic_arrow_back_black_24dp"
         android:title="@string/back"
         app:showAsAction="ifRoom"/>

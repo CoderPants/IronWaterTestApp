@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ProductManager</string>
+    <string name="back">Back</string>
+    <string name="about_company">О компании</string>
+    <string name="product_name">Название произведения</string>
+    <string name="product_id">ISBN</string>
 </resources>

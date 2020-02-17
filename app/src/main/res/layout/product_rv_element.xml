@@ -4,14 +4,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="16dp"
-    android:layout_marginTop="24dp"
-    android:layout_marginBottom="24dp">
+    android:padding="@dimen/rv_element_padding"
+    android:layout_marginTop="@dimen/rv_element_margin"
+    android:layout_marginBottom="@dimen/rv_element_margin">
 
     <TextView
         android:id="@+id/tv_for_product_id"
         android:layout_width="match_parent"
-        android:layout_height="24dp"
+        android:layout_height="@dimen/rv_element_height"
         android:textAppearance="@style/TextSecondary"
         app:layout_constraintBottom_toTopOf="@+id/tv_for_product_name"
         app:layout_constraintStart_toStartOf="parent"
