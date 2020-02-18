@@ -3,4 +3,5 @@
     <dimen name="rv_element_padding">16dp</dimen>
     <dimen name="rv_element_margin">24dp</dimen>
     <dimen name="rv_element_height">24dp</dimen>
+    <dimen name="scrollview_padding_bottom">56dp</dimen>
 </resources>

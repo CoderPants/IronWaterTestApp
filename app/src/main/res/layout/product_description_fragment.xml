@@ -4,11 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="@dimen/rv_element_margin">
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/rv_element_padding"
+        android:paddingBottom="@dimen/scrollview_padding_bottom">
 
         <ImageView
             android:id="@+id/iv_for_product_image"
@@ -37,7 +39,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLines="2"
-            android:text="Говард Филлипс Лавкрафт. Малое собрание сочинений"
             android:padding="@dimen/rv_element_padding"
             android:textAppearance="@style/TextSecondary"
             app:layout_constraintEnd_toEndOf="parent"
@@ -62,7 +63,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/rv_element_padding"
-            android:text="9785389081420"
             android:textAppearance="@style/TextSecondary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -97,8 +97,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/rv_element_padding"
-            android:text="Говард Филлипс Лавкрафт, не опубликовавший при жизни ни одной книги, стал маяком и ориентиром жанра литературы ужасов, кумиром как широких читательских масс, так и рафинированных интеллектуалов. Влияние его признавали такие мастера, как Борхес, и такие кумиры миллионов, как Стивен Кинг, его рассказы неоднократно экранизировались, а само имя писателя стало нарицательным. В данную книгу вошли наиболее известные повести и рассказы одного из самых влиятельных мифотворцев двадцатого века.
-Говард Филлипс Лавкрафт, не опубликовавший при жизни ни одной книги, стал маяком и ориентиром жанра литературы ужасов, кумиром как широких читательских масс, так и рафинированных интеллектуалов. Влияние его признавали такие мастера, как Борхес, и такие кумиры миллионов, как Стивен Кинг, его рассказы неоднократно экранизировались, а само имя писателя стало нарицательным. В данную книгу вошли наиболее известные повести и рассказы одного из самых влиятельных мифотворцев двадцатого века."
             android:textAppearance="@style/TextSecondary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

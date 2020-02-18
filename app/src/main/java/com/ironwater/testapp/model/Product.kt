@@ -1,8 +1,11 @@
 package com.ironwater.testapp.model
 
+import com.google.gson.annotations.SerializedName
+
 data class Product(
-    val id : Int,
-    val title : String,
-    val image : String,
-    val description: Description
+    @SerializedName("id")
+    val isbn : Long = -1L,
+    val title : String = "",
+    val image : String = "",
+    val description: Description = Description()
 )

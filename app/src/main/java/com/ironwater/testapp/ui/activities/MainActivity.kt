@@ -13,15 +13,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val toolbar : Toolbar = findViewById(R.id.main_toolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(false);
+        /*val toolbar : Toolbar = findViewById(R.id.main_toolbar)
         toolbar.title = ""
-        setSupportActionBar(toolbar)
+        setSupportActionBar(toolbar)*/
         //redirectToFragment()
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    /*override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         //return super.onCreateOptionsMenu(menu)
         menuInflater.inflate(R.menu.descriprion_menu, menu)
         return true
-    }
+    }*/
 }

@@ -39,16 +39,16 @@ class ProductsAdapter : RecyclerView.Adapter<ProductsAdapter.ProductViewHolder>(
     inner class ProductViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView){
 
         fun bind(product : Product){
-            itemView.tv_for_product_id.text = product.id.toString()
+            itemView.tv_for_product_id.text = product.isbn.toString()
             itemView.tv_for_product_name.text = product.title
 
             itemView.setOnClickListener{
-                callback.redirectToDescriptionFragment(productId = product.id)
+                callback.redirectToDescriptionFragment(productId = product.isbn)
             }
         }
     }
 
     interface RVCallBack{
-        fun redirectToDescriptionFragment(productId : Int)
+        fun redirectToDescriptionFragment(productId : Long)
     }
 }

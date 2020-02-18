@@ -1,6 +1,6 @@
 [
     {
-        "id": "1",
+        "id": "9785389081420",
         "title": "Говард Филлипс Лавкрафт. Малое собрание сочинений",
         "image": "lovecraft_small_collection_of_works",
         "description": {
@@ -11,7 +11,7 @@
         }
     },
     {
-        "id": "2",
+        "id": "9785171144258",
         "title": "Метро 2033",
         "image": "metro_2033",
         "description": {
@@ -22,7 +22,7 @@
         }
     },
     {
-        "id": "3",
+        "id": "9785699556991",
         "title": "Цветы для Элджернона",
         "image": "flowers_for_algernon",
         "description": {
@@ -33,7 +33,7 @@
         }
     },
     {
-        "id": "4",
+        "id": "9785040933136",
         "title": "Странная история доктора Джекила и мистера Хайда",
         "image": "jekyll_and_hyde",
         "description": {
@@ -44,7 +44,7 @@
         }
     },
     {
-        "id": "5",
+        "id": "9785171041519",
         "title": "Заводной апельсин",
         "image": "clockwork_orange",
         "description": {

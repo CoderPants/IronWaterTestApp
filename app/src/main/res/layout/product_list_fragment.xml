@@ -9,6 +9,7 @@
        android:id="@+id/rv_for_products"
        android:layout_width="match_parent"
        android:layout_height="match_parent"
+       android:layout_marginBottom="@dimen/rv_element_margin"
        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
     <ProgressBar
