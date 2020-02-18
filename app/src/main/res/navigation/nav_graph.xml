@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/productListFragment">
+
+    <fragment
+        android:id="@+id/productListFragment"
+        android:name="com.ironwater.testapp.ui.fragments.ProductListFragment"
+        android:label="ProductListFragment" >
+        <action
+            android:id="@+id/action_productListFragment_to_productDescriptionFragment"
+            app:destination="@id/productDescriptionFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/productDescriptionFragment"
+        android:name="com.ironwater.testapp.ui.fragments.ProductDescriptionFragment"
+        android:label="ProductDescriptionFragment" >
+
+        <argument android:name="product"
+            android:defaultValue="0"
+            app:argType="integer"/>
+
+        <action
+            android:id="@+id/action_productDescriptionFragment_to_productCompanyFragment"
+            app:destination="@id/productCompanyFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/productCompanyFragment"
+        android:name="com.ironwater.testapp.ui.fragments.ProductCompanyFragment"
+        android:label="ProductCompanyFragment">
+
+        <argument android:name="description"
+            android:defaultValue="None"/>
+
+    </fragment>
+</navigation>

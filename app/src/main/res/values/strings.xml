@@ -4,4 +4,7 @@
     <string name="about_company">О компании</string>
     <string name="product_name">Название произведения</string>
     <string name="product_id">ISBN</string>
+    <string name="description">Description</string>
+    <string name="company_link">Link:</string>
+
 </resources>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/rv_element_margin">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_for_product_image"
+            android:layout_width="150dp"
+            android:layout_height="210dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/description_fragment_tv_product_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:text="@string/product_name"
+            android:paddingTop="@dimen/rv_element_padding"
+            android:paddingStart="@dimen/rv_element_padding"
+            android:paddingEnd="@dimen/rv_element_padding"
+            android:textAppearance="@style/TextPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_for_product_image" />
+
+        <TextView
+            android:id="@+id/description_fragment_tv_for_product_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:text="Говард Филлипс Лавкрафт. Малое собрание сочинений"
+            android:padding="@dimen/rv_element_padding"
+            android:textAppearance="@style/TextSecondary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/description_fragment_tv_product_name" />
+
+        <TextView
+            android:id="@+id/description_fragment_tv_product_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/product_id"
+            android:paddingTop="@dimen/rv_element_padding"
+            android:paddingStart="@dimen/rv_element_padding"
+            android:paddingEnd="@dimen/rv_element_padding"
+            android:textAppearance="@style/TextPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/description_fragment_tv_for_product_name" />
+
+        <TextView
+            android:id="@+id/description_fragment_tv_for_product_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/rv_element_padding"
+            android:text="9785389081420"
+            android:textAppearance="@style/TextSecondary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/description_fragment_tv_product_id" />
+
+
+        <View
+            android:id="@+id/activity_launch_details_top_container_border"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="bottom"
+            android:background="#000"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/description_fragment_tv_for_product_id" />
+
+        <TextView
+            android:id="@+id/description_fragment_tv_product_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/description"
+            android:paddingTop="@dimen/rv_element_padding"
+            android:paddingStart="@dimen/rv_element_padding"
+            android:paddingEnd="@dimen/rv_element_padding"
+            android:textAppearance="@style/TextPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/activity_launch_details_top_container_border" />
+
+        <TextView
+            android:id="@+id/description_fragment_tv_for_product_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/rv_element_padding"
+            android:text="Говард Филлипс Лавкрафт, не опубликовавший при жизни ни одной книги, стал маяком и ориентиром жанра литературы ужасов, кумиром как широких читательских масс, так и рафинированных интеллектуалов. Влияние его признавали такие мастера, как Борхес, и такие кумиры миллионов, как Стивен Кинг, его рассказы неоднократно экранизировались, а само имя писателя стало нарицательным. В данную книгу вошли наиболее известные повести и рассказы одного из самых влиятельных мифотворцев двадцатого века.
+Говард Филлипс Лавкрафт, не опубликовавший при жизни ни одной книги, стал маяком и ориентиром жанра литературы ужасов, кумиром как широких читательских масс, так и рафинированных интеллектуалов. Влияние его признавали такие мастера, как Борхес, и такие кумиры миллионов, как Стивен Кинг, его рассказы неоднократно экранизировались, а само имя писателя стало нарицательным. В данную книгу вошли наиболее известные повести и рассказы одного из самых влиятельных мифотворцев двадцатого века."
+            android:textAppearance="@style/TextSecondary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/description_fragment_tv_product_description" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

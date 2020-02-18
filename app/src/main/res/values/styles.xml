@@ -22,4 +22,10 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="TextLinks">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/textPrimaryColor</item>
+        <item name="android:textAlignment">textStart</item>
+    </style>
+
 </resources>

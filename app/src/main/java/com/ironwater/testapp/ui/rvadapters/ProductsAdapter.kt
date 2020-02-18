@@ -11,6 +11,7 @@ import kotlinx.android.synthetic.main.product_rv_element.view.*
 class ProductsAdapter : RecyclerView.Adapter<ProductsAdapter.ProductViewHolder>(){
 
     private val products : MutableList<Product> = ArrayList()
+    lateinit var callback : RVCallBack
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
         val view = LayoutInflater
@@ -31,11 +32,23 @@ class ProductsAdapter : RecyclerView.Adapter<ProductsAdapter.ProductViewHolder>(
         notifyDataSetChanged()
     }
 
-    class ProductViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView){
+    fun setCallBack(callback: RVCallBack){
+        this.callback = callback
+    }
+
+    inner class ProductViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView){
 
         fun bind(product : Product){
             itemView.tv_for_product_id.text = product.id.toString()
             itemView.tv_for_product_name.text = product.title
+
+            itemView.setOnClickListener{
+                callback.redirectToDescriptionFragment(productId = product.id)
+            }
         }
+    }
+
+    interface RVCallBack{
+        fun redirectToDescriptionFragment(productId : Int)
     }
 }
