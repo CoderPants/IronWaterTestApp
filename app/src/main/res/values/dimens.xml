@@ -4,4 +4,7 @@
     <dimen name="rv_element_margin">24dp</dimen>
     <dimen name="rv_element_height">24dp</dimen>
     <dimen name="scrollview_padding_bottom">56dp</dimen>
+    <dimen name="rv_image_width">100dp</dimen>
+    <dimen name="rv_image_height">140dp</dimen>
+    <dimen name="rv_bottom_border_margin_top">12dp</dimen>
 </resources>

@@ -1,10 +1,14 @@
 <resources>
-    <string name="app_name">ProductManager</string>
-    <string name="back">Back</string>
+    <string name="app_name">Product Manager</string>
     <string name="about_company">О компании</string>
     <string name="product_name">Название произведения</string>
     <string name="product_id">ISBN</string>
-    <string name="description">Description</string>
-    <string name="company_link">Link:</string>
+    <string name="description">Описание</string>
+    <string name="company_link">Сайт компании:</string>
+
+    <string name="dialog_title">Подтверждение действия</string>
+    <string name="dialog_message">Вы действительно ходите перейти на сайт компании?</string>
+    <string name="dialog_positive">OK</string>
+    <string name="dialog_negative">Cancel</string>
 
 </resources>

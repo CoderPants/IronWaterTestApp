@@ -1,5 +1,7 @@
 package com.ironwater.testapp.viewmodel
 
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -20,8 +22,10 @@ class MainViewModel : ViewModel(){
 
     private val repository = Repository()
 
+    //To retrieve data from file
     private val observableProducts : MutableLiveData<List<Product>> = MutableLiveData(emptyList())
 
+    //To use this as in all child fragments
     private lateinit var products : List<Product>
 
     fun getProducts() : LiveData<List<Product>> = observableProducts
@@ -43,5 +47,14 @@ class MainViewModel : ViewModel(){
         }
         return Constants.EMPTY_PRODUCT
     }
+
+    fun setupToolBar(activity: AppCompatActivity, toolbar: Toolbar, enableUpButton : Boolean)=
+        activity.apply {
+            setSupportActionBar(toolbar)
+            supportActionBar!!.setDisplayShowTitleEnabled(false)
+            supportActionBar!!.setDisplayHomeAsUpEnabled(enableUpButton)
+            if(enableUpButton)
+                toolbar.setNavigationOnClickListener { onBackPressed() }
+        }
 
 }

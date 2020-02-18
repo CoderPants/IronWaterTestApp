@@ -1,5 +1,6 @@
 package com.ironwater.testapp.ui.fragments
 
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.util.Log
 import android.view.*
@@ -20,6 +21,8 @@ import com.ironwater.testapp.ui.activities.MainActivity
 import com.ironwater.testapp.ui.rvadapters.ProductsAdapter
 import com.ironwater.testapp.utils.Constants
 import com.ironwater.testapp.viewmodel.MainViewModel
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.product_description_fragment.*
 import kotlinx.android.synthetic.main.product_list_fragment.*
 
 class ProductListFragment : Fragment(R.layout.product_list_fragment) {
@@ -32,11 +35,12 @@ class ProductListFragment : Fragment(R.layout.product_list_fragment) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
-
         navController = Navigation.findNavController(view)
 
         viewModel = ViewModelProvider(activity as MainActivity).get(MainViewModel::class.java)
+
+        val activity = (activity as AppCompatActivity)
+        viewModel.setupToolBar( activity, activity.findViewById(R.id.main_toolbar), false )
 
         initRecyclerView()
         subscribeObservers()
@@ -46,9 +50,20 @@ class ProductListFragment : Fragment(R.layout.product_list_fragment) {
 
         rvAdapter.setCallBack(object : ProductsAdapter.RVCallBack{
             override fun redirectToDescriptionFragment(productId: Long) {
-                val bundle = bundleOf("product" to productId)
+                val bundle = bundleOf(Constants.PRODUCT_ID to productId)
                 navController
                     .navigate(R.id.action_productListFragment_to_productDescriptionFragment, bundle)
+            }
+
+            override fun getDrawable(imageName: String): Drawable {
+                val image = activity!!
+                    .resources
+                    .getIdentifier(imageName, "drawable", activity!!.packageName)
+
+                return if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP)
+                    activity!!.resources.getDrawable(image, null)
+                else
+                    activity!!.resources.getDrawable(image)
             }
         })
 

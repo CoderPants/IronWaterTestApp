@@ -1,0 +1,13 @@
+package com.ironwater.testapp.utils
+
+import android.content.Context
+import android.content.Intent
+import android.net.Uri
+
+object FragmentHelper {
+
+    fun openLink(context: Context, url : String ){
+        val intentBrowser = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+        context.startActivity(intentBrowser)
+    }
+}

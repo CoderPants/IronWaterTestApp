@@ -22,10 +22,21 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <!--<style name="TextRVSecondary">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/textSecondaryColor</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textStyle">bold</item>
+    </style>-->
+
     <style name="TextLinks">
         <item name="android:textSize">14sp</item>
-        <item name="android:textColor">@color/textPrimaryColor</item>
+        <item name="android:textColor">@color/colorAccent</item>
         <item name="android:textAlignment">textStart</item>
+    </style>
+
+    <style name="myDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowNoTitle">true</item>
     </style>
 
 </resources>

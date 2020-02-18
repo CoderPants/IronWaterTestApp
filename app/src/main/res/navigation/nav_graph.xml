@@ -24,7 +24,7 @@
         android:name="com.ironwater.testapp.ui.fragments.ProductDescriptionFragment"
         android:label="ProductDescriptionFragment" >
 
-        <argument android:name="product"
+        <argument android:name="productId"
             app:argType="long"/>
 
         <action
@@ -41,7 +41,7 @@
         android:name="com.ironwater.testapp.ui.fragments.ProductCompanyFragment"
         android:label="ProductCompanyFragment">
 
-        <argument android:name="product"
+        <argument android:name="productId"
             app:argType="long"/>
 
     </fragment>

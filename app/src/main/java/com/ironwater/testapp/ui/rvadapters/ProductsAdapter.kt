@@ -1,5 +1,6 @@
 package com.ironwater.testapp.ui.rvadapters
 
+import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -41,6 +42,7 @@ class ProductsAdapter : RecyclerView.Adapter<ProductsAdapter.ProductViewHolder>(
         fun bind(product : Product){
             itemView.tv_for_product_id.text = product.isbn.toString()
             itemView.tv_for_product_name.text = product.title
+            itemView.iv_for_product_image.setImageDrawable( callback.getDrawable(product.image) )
 
             itemView.setOnClickListener{
                 callback.redirectToDescriptionFragment(productId = product.isbn)
@@ -50,5 +52,7 @@ class ProductsAdapter : RecyclerView.Adapter<ProductsAdapter.ProductViewHolder>(
 
     interface RVCallBack{
         fun redirectToDescriptionFragment(productId : Long)
+
+        fun getDrawable(imageName : String) : Drawable
     }
 }

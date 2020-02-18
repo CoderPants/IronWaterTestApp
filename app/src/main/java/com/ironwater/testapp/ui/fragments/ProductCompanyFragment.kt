@@ -2,13 +2,15 @@ package com.ironwater.testapp.ui.fragments
 
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.ironwater.testapp.R
 import com.ironwater.testapp.model.Description
 import com.ironwater.testapp.ui.activities.MainActivity
+import com.ironwater.testapp.utils.Constants
+import com.ironwater.testapp.utils.FragmentHelper
 import com.ironwater.testapp.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.product_company_fragment.*
 
@@ -16,25 +18,39 @@ class ProductCompanyFragment : Fragment(R.layout.product_company_fragment) {
 
     private lateinit var viewModel: MainViewModel
 
+    private lateinit var companyUrl : String
+
+    private lateinit var dialog: AlertDialog
+
+    private var hasDialogShown : Boolean = false
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel = ViewModelProvider(activity as MainActivity).get(MainViewModel::class.java)
 
-        val toolbar: Toolbar = (activity as AppCompatActivity).findViewById(R.id.main_toolbar)
-        setUpToolBar(toolbar)
+        val activity = (activity as AppCompatActivity)
+        viewModel.setupToolBar( activity, activity.findViewById(R.id.main_toolbar), true )
 
-        val id : Long = arguments!!.getLong("product")
-        fillFragment(id)
+        val productID : Long = arguments!!.getLong(Constants.PRODUCT_ID)
+        fillFragment(productID)
+
+        hasDialogShown = savedInstanceState?.getBoolean(Constants.HAS_DIALOG) ?: false
+
+        if(hasDialogShown)
+            dialog.show()
     }
 
-    private fun setUpToolBar(toolbar: Toolbar) {
-        (activity as AppCompatActivity).apply {
-            setSupportActionBar(toolbar)
-            supportActionBar!!.setDisplayShowTitleEnabled(false)
-            supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-            toolbar.setNavigationOnClickListener { onBackPressed() }
-        }
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putBoolean(Constants.HAS_DIALOG, hasDialogShown)
+    }
+
+    override fun onStop() {
+        super.onStop()
+
+        if(dialog.isShowing)
+            dialog.dismiss()
     }
 
     private fun fillFragment(id: Long) {
@@ -52,6 +68,36 @@ class ProductCompanyFragment : Fragment(R.layout.product_company_fragment) {
                 .setImageDrawable(activity!!.resources.getDrawable(companyLogo))
 
         tv_for_company_name.text = description.companyName
-        tv_for_company_link.text = description.url
+
+        companyUrl = description.url
+        tv_for_company_link.text = companyUrl
+
+        createDialog()
+        tv_for_company_link.setOnClickListener{
+            hasDialogShown = true
+            dialog.show()
+        }
+    }
+
+    private fun createDialog(){
+        val dialogBuilder = AlertDialog.Builder(context!!)
+
+        dialogBuilder
+            .setMessage(R.string.dialog_message)
+            .setTitle(R.string.dialog_title)
+
+        dialogBuilder
+            .setPositiveButton(R.string.dialog_positive) {
+                _, _ ->
+                FragmentHelper.openLink(context!!, companyUrl)
+                hasDialogShown = false
+            }
+            .setNegativeButton(R.string.dialog_negative){
+            _,_->
+                dialog.dismiss()
+                hasDialogShown = false
+            }
+
+        dialog = dialogBuilder.create()
     }
 }
