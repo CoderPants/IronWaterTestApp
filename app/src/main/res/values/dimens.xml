@@ -7,4 +7,8 @@
     <dimen name="rv_image_width">100dp</dimen>
     <dimen name="rv_image_height">140dp</dimen>
     <dimen name="rv_bottom_border_margin_top">12dp</dimen>
+    <dimen name="rv_element_tv_width">210dp</dimen>
+    <dimen name="rv_element_corners_radius">10dp</dimen>
+    <dimen name="corners_image_padding">6dp</dimen>
+    <dimen name="corners_image_radius">12dp</dimen>
 </resources>

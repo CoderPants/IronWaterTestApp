@@ -23,7 +23,8 @@
             android:layout_height="wrap_content"
             android:text="@string/books"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="@color/appWhite"/>
 
     </androidx.appcompat.widget.Toolbar>
 

@@ -3,20 +3,21 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/transparent</item>
-        <item name="colorPrimaryDark">@color/transparent</item>
+        <item name="colorPrimary">@color/appBlueDark</item>
+        <item name="colorPrimaryDark">@color/appBlueDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:homeAsUpIndicator">@drawable/action_up_caret</item>
     </style>
 
     <style name="TextPrimary">
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/textPrimaryColor</item>
         <item name="android:textAlignment">textStart</item>
         <item name="android:textStyle">bold</item>
     </style>
 
     <style name="TextSecondary">
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/textSecondaryColor</item>
         <item name="android:textAlignment">textStart</item>
         <item name="android:textStyle">bold</item>

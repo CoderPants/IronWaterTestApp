@@ -7,6 +7,7 @@
 
     <string name="product_name">Название произведения</string>
     <string name="product_id">ISBN</string>
+    <string name="product_id_with_colon">ISBN:</string>
     <string name="description">Описание</string>
     <string name="company_link">Сайт компании:</string>
 

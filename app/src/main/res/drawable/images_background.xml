@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <corners android:radius="@dimen/rv_element_corners_radius"/>
+
+    <stroke android:color="@color/black"
+        android:width="1dp"/>
+
+</shape>-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="@color/transparent" />
+    <padding android:left="@dimen/corners_image_padding"
+        android:top="@dimen/corners_image_padding"
+        android:right="@dimen/corners_image_padding"
+        android:bottom="@dimen/corners_image_padding" />
+    <corners android:radius="@dimen/corners_image_radius" />
+    <stroke android:width="@dimen/corners_image_padding" android:color="@color/appOrangeDark" />
+</shape>
