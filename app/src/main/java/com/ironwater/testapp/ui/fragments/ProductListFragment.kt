@@ -66,7 +66,11 @@ class ProductListFragment : Fragment(R.layout.product_list_fragment) {
         })
 
         rv_for_products.apply {
-            layoutManager = LinearLayoutManager(context)
+            layoutManager = LinearLayoutManager(
+                context,
+                LinearLayoutManager.HORIZONTAL,
+                false
+            )
             adapter = rvAdapter
             setHasFixedSize(true)
         }

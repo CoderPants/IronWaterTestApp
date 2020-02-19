@@ -4,8 +4,11 @@
     <color name="colorPrimaryDark">#43a9d8</color>
     <color name="colorAccent">#2f7ba2</color>
 
-    <color name="textPrimaryColor">#d4e1e4</color>
-    <color name="textSecondaryColor">#d4e1e4</color>
+    <color name="textRVPrimaryColor">#d4e1e4</color>
+    <color name="textRVSecondaryColor">#d4e1e4</color>
+
+    <color name="textPrimaryColor">#191d24</color>
+    <color name="textSecondaryColor">#707376</color>
 
     <color name="gray">#707376</color>
     <color name="black">#191d24</color>
@@ -14,7 +17,8 @@
 
 <!--    #040FA9 - blueDark
 #4559B8 - textPrimary-->
-    <color name="appBlueDark">#206bec</color>
+    <color name="appBlue">#206bec</color>
+    <color name="appDarkBlue">#040FA9</color>
     <color name="appWhite">#FBFCFC</color>
     <color name="appGray">#909CB5</color>
     <color name="appOrangeDark">#F97d22</color>
