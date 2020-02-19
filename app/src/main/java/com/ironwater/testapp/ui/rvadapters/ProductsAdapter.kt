@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.product_rv_element.view.*
 class ProductsAdapter : RecyclerView.Adapter<ProductsAdapter.ProductViewHolder>(){
 
     private val products : MutableList<Product> = ArrayList()
-    lateinit var callback : RVCallBack
+    private lateinit var callback : RVCallBack
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
         val view = LayoutInflater

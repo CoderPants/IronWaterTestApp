@@ -22,7 +22,7 @@ class ProductCompanyFragment : Fragment(R.layout.product_company_fragment) {
 
     private lateinit var dialog: AlertDialog
 
-    private var hasDialogShown : Boolean = false
+    private var isDialogShowing : Boolean = false
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -30,20 +30,25 @@ class ProductCompanyFragment : Fragment(R.layout.product_company_fragment) {
         viewModel = ViewModelProvider(activity as MainActivity).get(MainViewModel::class.java)
 
         val activity = (activity as AppCompatActivity)
-        viewModel.setupToolBar( activity, activity.findViewById(R.id.main_toolbar), true )
+        viewModel.setupToolBar(
+            activity,
+            activity.findViewById(R.id.main_toolbar),
+            true,
+            R.string.about_company
+        )
 
         val productID : Long = arguments!!.getLong(Constants.PRODUCT_ID)
         fillFragment(productID)
 
-        hasDialogShown = savedInstanceState?.getBoolean(Constants.HAS_DIALOG) ?: false
+        isDialogShowing = savedInstanceState?.getBoolean(Constants.HAS_DIALOG) ?: false
 
-        if(hasDialogShown)
+        if(isDialogShowing)
             dialog.show()
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        outState.putBoolean(Constants.HAS_DIALOG, hasDialogShown)
+        outState.putBoolean(Constants.HAS_DIALOG, isDialogShowing)
     }
 
     override fun onStop() {
@@ -56,17 +61,10 @@ class ProductCompanyFragment : Fragment(R.layout.product_company_fragment) {
     private fun fillFragment(id: Long) {
         val description : Description = viewModel.findProductById(id).description
 
-        val companyLogo = activity!!
-            .resources
-            .getIdentifier(description.companyLogo, "drawable", activity!!.packageName)
+        val companyLogo = viewModel
+            .getDrawableByName(description.companyLogo, activity = activity as AppCompatActivity)
 
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP)
-            iv_for_company_logo
-                .setImageDrawable(activity!!.resources.getDrawable(companyLogo, null))
-        else
-            iv_for_company_logo
-                .setImageDrawable(activity!!.resources.getDrawable(companyLogo))
-
+        iv_for_company_logo.setImageDrawable(companyLogo)
         tv_for_company_name.text = description.companyName
 
         companyUrl = description.url
@@ -74,7 +72,7 @@ class ProductCompanyFragment : Fragment(R.layout.product_company_fragment) {
 
         createDialog()
         tv_for_company_link.setOnClickListener{
-            hasDialogShown = true
+            isDialogShowing = true
             dialog.show()
         }
     }
@@ -90,12 +88,12 @@ class ProductCompanyFragment : Fragment(R.layout.product_company_fragment) {
             .setPositiveButton(R.string.dialog_positive) {
                 _, _ ->
                 FragmentHelper.openLink(context!!, companyUrl)
-                hasDialogShown = false
+                isDialogShowing = false
             }
             .setNegativeButton(R.string.dialog_negative){
             _,_->
                 dialog.dismiss()
-                hasDialogShown = false
+                isDialogShowing = false
             }
 
         dialog = dialogBuilder.create()

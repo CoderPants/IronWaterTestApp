@@ -9,4 +9,11 @@
 
     <color name="gray">#707376</color>
     <color name="black">#191d24</color>
+
+    <color name="transparent">#00000000</color>
+
+    <color name="appBlueDark">#040FA9</color>
+    <color name="appWhite">#FBFCFC</color>
+    <color name="appGray">#909CB5</color>
+
 </resources>

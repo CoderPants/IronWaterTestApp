@@ -5,8 +5,8 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
+import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -40,7 +40,12 @@ class ProductDescriptionFragment : Fragment(R.layout.product_description_fragmen
         viewModel = ViewModelProvider(activity as MainActivity).get(MainViewModel::class.java)
 
         val activity = (activity as AppCompatActivity)
-        viewModel.setupToolBar( activity, activity.findViewById(R.id.main_toolbar), true )
+        viewModel.setupToolBar(
+            activity,
+            activity.findViewById(R.id.main_toolbar),
+            true,
+            R.string.about_book
+        )
 
         val productID : Long = arguments!!.getLong(Constants.PRODUCT_ID)
         fillFragment(productID)
@@ -49,6 +54,17 @@ class ProductDescriptionFragment : Fragment(R.layout.product_description_fragmen
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         activity!!.menuInflater.inflate(R.menu.descriprion_menu, menu)
+    }
+
+    //Without this, custom toolbar item won't be clickable
+    override fun onPrepareOptionsMenu(menu: Menu) {
+        val customMenuItem = menu.findItem(R.id.action_about_company)
+        val rootView : FrameLayout = customMenuItem.actionView as FrameLayout
+
+        rootView.setOnClickListener{
+            onOptionsItemSelected(customMenuItem)
+        }
+        super.onPrepareOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean =
@@ -65,14 +81,11 @@ class ProductDescriptionFragment : Fragment(R.layout.product_description_fragmen
     private fun fillFragment(id : Long) {
         product = viewModel.findProductById(id)
 
-        val image = activity!!
-            .resources
-            .getIdentifier(product.image, "drawable", activity!!.packageName)
+        val image = viewModel
+            .getDrawableByName(product.image, activity = activity as AppCompatActivity)
 
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP)
-            description_fragment_iv_for_product_image.setImageDrawable(activity!!.resources.getDrawable(image, null))
-        else
-            description_fragment_iv_for_product_image.setImageDrawable(activity!!.resources.getDrawable(image))
+        description_fragment_iv_for_product_image
+            .setImageDrawable(image)
 
         description_fragment_tv_for_product_id.text = product.isbn.toString()
         description_fragment_tv_for_product_name.text = product.title

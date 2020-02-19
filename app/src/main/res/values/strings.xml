@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Product Manager</string>
+
+    <string name="books">Книги</string>
+    <string name="about_book">О книге</string>
     <string name="about_company">О компании</string>
+
     <string name="product_name">Название произведения</string>
     <string name="product_id">ISBN</string>
     <string name="description">Описание</string>

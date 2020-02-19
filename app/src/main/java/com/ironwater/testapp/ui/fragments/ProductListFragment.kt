@@ -40,7 +40,12 @@ class ProductListFragment : Fragment(R.layout.product_list_fragment) {
         viewModel = ViewModelProvider(activity as MainActivity).get(MainViewModel::class.java)
 
         val activity = (activity as AppCompatActivity)
-        viewModel.setupToolBar( activity, activity.findViewById(R.id.main_toolbar), false )
+        viewModel.setupToolBar(
+            activity,
+            activity.findViewById(R.id.main_toolbar),
+            false,
+            R.string.books
+        )
 
         initRecyclerView()
         subscribeObservers()
@@ -49,22 +54,15 @@ class ProductListFragment : Fragment(R.layout.product_list_fragment) {
     private fun initRecyclerView() {
 
         rvAdapter.setCallBack(object : ProductsAdapter.RVCallBack{
+
             override fun redirectToDescriptionFragment(productId: Long) {
                 val bundle = bundleOf(Constants.PRODUCT_ID to productId)
                 navController
                     .navigate(R.id.action_productListFragment_to_productDescriptionFragment, bundle)
             }
 
-            override fun getDrawable(imageName: String): Drawable {
-                val image = activity!!
-                    .resources
-                    .getIdentifier(imageName, "drawable", activity!!.packageName)
-
-                return if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP)
-                    activity!!.resources.getDrawable(image, null)
-                else
-                    activity!!.resources.getDrawable(image)
-            }
+            override fun getDrawable(imageName: String): Drawable =
+                viewModel.getDrawableByName(imageName, activity = activity as AppCompatActivity)
         })
 
         rv_for_products.apply {
