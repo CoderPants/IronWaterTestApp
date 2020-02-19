@@ -89,6 +89,7 @@ class ProductDescriptionFragment : Fragment(R.layout.product_description_fragmen
 
         description_fragment_tv_for_product_id.text = product.isbn.toString()
         description_fragment_tv_for_product_name.text = product.title
+        description_fragment_tv_for_product_company.text = product.description.companyName
         description_fragment_tv_for_product_description.text = product.description.about
 
     }

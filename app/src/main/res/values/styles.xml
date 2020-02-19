@@ -25,14 +25,14 @@
 
     <style name="TextRVPrimary">
         <item name="android:textSize">16sp</item>
-        <item name="android:textColor">@color/textRVPrimaryColor</item>
+        <item name="android:textColor">@color/textPrimaryColor</item>
         <item name="android:textAlignment">textStart</item>
         <item name="android:textStyle">bold</item>
     </style>
 
     <style name="TextRVSecondary">
         <item name="android:textSize">14sp</item>
-        <item name="android:textColor">@color/textRVSecondaryColor</item>
+        <item name="android:textColor">@color/textSecondaryColor</item>
         <item name="android:textAlignment">textStart</item>
         <item name="android:textStyle">bold</item>
     </style>

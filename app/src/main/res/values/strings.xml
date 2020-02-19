@@ -7,13 +7,14 @@
 
     <string name="product_name">Название произведения</string>
     <string name="product_id">ISBN</string>
+    <string name="product_company">Медиакомпания</string>
     <string name="product_id_with_colon">ISBN:</string>
     <string name="description">Описание</string>
     <string name="company_link">Сайт компании:</string>
 
     <string name="dialog_title">Подтверждение действия</string>
-    <string name="dialog_message">Вы действительно ходите перейти на сайт компании?</string>
+    <string name="dialog_message">Открыть сайт в браузере?</string>
     <string name="dialog_positive">OK</string>
-    <string name="dialog_negative">Cancel</string>
+    <string name="dialog_negative">Отмена</string>
 
 </resources>

@@ -3,7 +3,7 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="312dp"
+    android:layout_width="@dimen/rv_scrollview_width"
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         android:padding="@dimen/rv_element_padding"
         android:background="@drawable/rv_element_background"
-        android:layout_margin="@dimen/rv_element_padding"
-        android:layout_gravity="center">
+        android:layout_margin="@dimen/rv_element_padding">
+
 
         <ImageView
             android:id="@+id/iv_for_product_image"
@@ -26,6 +26,7 @@
             app:layout_constraintTop_toTopOf="@+id/iv_container"
             app:layout_constraintBottom_toBottomOf="@+id/iv_container"/>
 
+
         <!--For making image with corners-->
         <ImageView
             android:id="@+id/iv_container"
@@ -35,7 +36,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
-
 
         <TextView
             android:id="@+id/tv_for_product_name"

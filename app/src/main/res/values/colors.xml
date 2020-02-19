@@ -4,11 +4,11 @@
     <color name="colorPrimaryDark">#43a9d8</color>
     <color name="colorAccent">#2f7ba2</color>
 
-    <color name="textRVPrimaryColor">#d4e1e4</color>
-    <color name="textRVSecondaryColor">#d4e1e4</color>
+    <color name="textPrimaryColor">#d4e1e4</color>
+    <color name="textSecondaryColor">#C2C6D1</color>
 
-    <color name="textPrimaryColor">#191d24</color>
-    <color name="textSecondaryColor">#707376</color>
+<!--    <color name="textPrimaryColor">#191d24</color>
+    <color name="textSecondaryColor">#707376</color>-->
 
     <color name="gray">#707376</color>
     <color name="black">#191d24</color>
