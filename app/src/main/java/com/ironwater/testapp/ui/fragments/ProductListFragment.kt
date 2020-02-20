@@ -62,6 +62,8 @@ class ProductListFragment : Fragment(R.layout.product_list_fragment) {
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
 
+        //'Cos we have single activity and each rotation of the child fragment
+        // will trigger all back stack fragment's onSaveInstanceState
         if(this::recyclerView.isInitialized)
             outState.putParcelable(
                 Constants.SCROLL_RV_POSITION,
@@ -100,12 +102,12 @@ class ProductListFragment : Fragment(R.layout.product_list_fragment) {
 
     private fun createRVAdapterCallBack() : ProductsAdapter.RVCallBack =
         object : ProductsAdapter.RVCallBack {
-        override fun redirectToDescriptionFragment(productId: Long) {
-            val bundle = bundleOf(Constants.PRODUCT_ID to productId)
-            navController
-                .navigate(R.id.action_productListFragment_to_productDescriptionFragment, bundle)
+            override fun redirectToDescriptionFragment(productId: Long) {
+                val bundle = bundleOf(Constants.PRODUCT_ID to productId)
+                navController
+                    .navigate(R.id.action_productListFragment_to_productDescriptionFragment, bundle)
+            }
         }
-    }
 
 
 }

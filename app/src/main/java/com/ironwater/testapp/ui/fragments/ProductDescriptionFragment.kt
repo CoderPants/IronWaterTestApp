@@ -68,7 +68,15 @@ class ProductDescriptionFragment : Fragment(R.layout.product_description_fragmen
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean =
-        when(item.itemId){
+        if(item.itemId == R.id.action_about_company) {
+            val bundle = bundleOf(Constants.PRODUCT_ID to product.isbn)
+            navController
+                .navigate(R.id.action_productDescriptionFragment_to_productCompanyFragment, bundle)
+            true
+        }
+        else
+            super.onOptionsItemSelected(item)
+        /*when(item.itemId){
             R.id.action_about_company -> {
                 val bundle = bundleOf(Constants.PRODUCT_ID to product.isbn)
                 navController
@@ -76,7 +84,7 @@ class ProductDescriptionFragment : Fragment(R.layout.product_description_fragmen
                 true
             }
             else -> super.onOptionsItemSelected(item)
-        }
+        }*/
 
     private fun fillFragment(id : Long) {
         product = viewModel.findProductById(id)
