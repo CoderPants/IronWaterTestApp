@@ -63,10 +63,6 @@ dependencies {
     def material_version = "1.1.0"
     implementation "com.google.android.material:material:$material_version"
 
-    //Circle image view
-    def circle_image_version = "3.1.0"
-    implementation "de.hdodenhof:circleimageview:$circle_image_version"
-
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
