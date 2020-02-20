@@ -61,16 +61,12 @@ class ProductListFragment : Fragment(R.layout.product_list_fragment) {
                     .navigate(R.id.action_productListFragment_to_productDescriptionFragment, bundle)
             }
 
-            override fun getDrawable(imageName: String): Drawable =
-                viewModel.getDrawableByName(imageName, activity = activity as AppCompatActivity)
+            /*override fun getDrawable(imageName: String): Drawable =
+                viewModel.getDrawableByName(imageName, activity = activity as AppCompatActivity)*/
         })
 
         rv_for_products.apply {
-            layoutManager = LinearLayoutManager(
-                context,
-                LinearLayoutManager.HORIZONTAL,
-                false
-            )
+            layoutManager = LinearLayoutManager(context)
             adapter = rvAdapter
             setHasFixedSize(true)
         }

@@ -18,6 +18,7 @@
 <!--    #040FA9 - blueDark
 #4559B8 - textPrimary-->
     <color name="appBlue">#206bec</color>
+    <color name="appLightBlue">#2257C0</color>
     <color name="appDarkBlue">#040FA9</color>
     <color name="appWhite">#FBFCFC</color>
     <color name="appGray">#909CB5</color>

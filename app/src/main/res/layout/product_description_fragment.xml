@@ -41,7 +41,6 @@
             android:padding="@dimen/description_tv_padding"
             android:text="@string/product_name"
             android:textAllCaps="true"
-            android:textSize="12sp"
             android:textAppearance="@style/TextPrimary"
             app:layout_constraintStart_toEndOf="@+id/description_fragment_iv_container"
             app:layout_constraintTop_toTopOf="@+id/description_fragment_iv_container" />
@@ -61,7 +60,6 @@
             android:layout_height="wrap_content"
             android:text="@string/product_id"
             android:textAllCaps="true"
-            android:textSize="12sp"
             android:padding="@dimen/description_tv_padding"
             android:textAppearance="@style/TextPrimary"
             app:layout_constraintStart_toEndOf="@+id/description_fragment_iv_container"
@@ -74,7 +72,8 @@
             android:padding="@dimen/description_tv_padding"
             android:textAppearance="@style/TextSecondary"
             app:layout_constraintStart_toEndOf="@+id/description_fragment_iv_container"
-            app:layout_constraintTop_toBottomOf="@+id/description_fragment_tv_product_id" />
+            app:layout_constraintTop_toBottomOf="@+id/description_fragment_tv_product_id"
+            app:layout_constraintBottom_toTopOf="@+id/description_fragment_tv_product_company"/>
 
         <TextView
             android:id="@+id/description_fragment_tv_product_company"
@@ -82,11 +81,11 @@
             android:layout_height="wrap_content"
             android:text="@string/product_company"
             android:textAllCaps="true"
-            android:textSize="12sp"
             android:padding="@dimen/description_tv_padding"
             android:textAppearance="@style/TextPrimary"
             app:layout_constraintStart_toEndOf="@+id/description_fragment_iv_container"
-            app:layout_constraintTop_toBottomOf="@+id/description_fragment_tv_for_product_id" />
+            app:layout_constraintTop_toBottomOf="@+id/description_fragment_tv_for_product_id"
+            app:layout_constraintBottom_toTopOf="@+id/description_fragment_tv_for_product_company"/>
 
         <TextView
             android:id="@+id/description_fragment_tv_for_product_company"
@@ -95,7 +94,8 @@
             android:padding="@dimen/description_tv_padding"
             android:textAppearance="@style/TextSecondary"
             app:layout_constraintStart_toEndOf="@+id/description_fragment_iv_container"
-            app:layout_constraintTop_toBottomOf="@+id/description_fragment_tv_product_company" />
+            app:layout_constraintTop_toBottomOf="@+id/description_fragment_tv_product_company"
+            app:layout_constraintBottom_toBottomOf="@+id/description_fragment_iv_container"/>
 
 
         <!--<View
@@ -131,7 +131,7 @@
                 android:paddingStart="@dimen/rv_element_padding"
                 android:paddingEnd="@dimen/rv_element_padding"
                 android:textAppearance="@style/TextPrimary"
-                android:textSize="12sp"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/description_fragment_iv_for_product_image" />
@@ -142,6 +142,7 @@
                 android:layout_height="wrap_content"
                 android:padding="@dimen/rv_element_padding"
                 android:textAppearance="@style/TextSecondary"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/description_fragment_tv_product_description" />

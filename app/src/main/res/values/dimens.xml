@@ -2,12 +2,12 @@
 <resources>
     <dimen name="rv_element_padding">16dp</dimen>
     <dimen name="rv_element_margin">24dp</dimen>
-    <dimen name="rv_element_height">24dp</dimen>
     <dimen name="rv_image_width">250dp</dimen>
     <dimen name="rv_image_height">350dp</dimen>
     <dimen name="rv_bottom_border_margin_top">12dp</dimen>
     <dimen name="rv_element_tv_width">230dp</dimen>
-    <dimen name="rv_element_tv_height">60dp</dimen>
+    <dimen name="rv_element_tv_height">40dp</dimen>
+    <dimen name="rv_element_tv_height_secondary">24dp</dimen>
     <dimen name="rv_element_corners_radius">10dp</dimen>
 
     <dimen name="scrollview_padding_bottom">56dp</dimen>
@@ -19,5 +19,5 @@
     <dimen name="description_iv_width">150dp</dimen>
     <dimen name="description_iv_height">210dp</dimen>
     <dimen name="rv_scrollview_width">312dp</dimen>
-    <dimen name="description_tv_padding">8dp</dimen>
+    <dimen name="description_tv_padding">6dp</dimen>
 </resources>
