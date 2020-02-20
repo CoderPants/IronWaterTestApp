@@ -11,5 +11,5 @@
 
     <corners android:radius="@dimen/rv_element_corners_radius"/>
 
-    <solid android:color="@color/appBlue"/>
+    <solid android:color="@color/appOrangeLight"/>
 </shape>

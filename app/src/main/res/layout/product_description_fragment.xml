@@ -4,14 +4,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/appBlue"
+    android:background="@color/appWhite"
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/rv_element_padding"
-        android:background="@color/appBlue">
+        android:background="@color/appWhite">
 
 
         <ImageView
@@ -143,6 +143,7 @@
                 android:padding="@dimen/rv_element_padding"
                 android:textAppearance="@style/TextSecondary"
                 android:textSize="14sp"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/description_fragment_tv_product_description" />

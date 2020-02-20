@@ -15,5 +15,5 @@
         android:right="@dimen/corners_image_padding"
         android:bottom="@dimen/corners_image_padding" />
     <corners android:radius="@dimen/corners_image_radius" />
-    <stroke android:width="@dimen/corners_image_stroke" android:color="@color/appBlue" />
+    <stroke android:width="@dimen/corners_image_stroke" android:color="@color/appWhite" />
 </shape>

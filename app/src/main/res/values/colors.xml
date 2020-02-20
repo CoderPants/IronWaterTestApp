@@ -4,14 +4,18 @@
     <color name="colorPrimaryDark">#43a9d8</color>
     <color name="colorAccent">#2f7ba2</color>
 
-    <color name="textPrimaryColor">#d4e1e4</color>
-    <color name="textSecondaryColor">#C2C6D1</color>
+    <!--<color name="textPrimaryColor">#d4e1e4</color>
+    <color name="textSecondaryColor">#C2C6D1</color>-->
+
+    <color name="textPrimaryColor">#191d24</color>
+    <color name="textSecondaryColor">#707376</color>
 
 <!--    <color name="textPrimaryColor">#191d24</color>
     <color name="textSecondaryColor">#707376</color>-->
 
-    <color name="gray">#707376</color>
-    <color name="black">#191d24</color>
+<!--    <color name="gray">#707376</color>-->
+    <color name="gray">#99191D24</color>
+    <color name="black">#CC191D24</color>
 
     <color name="transparent">#00000000</color>
 
@@ -20,9 +24,9 @@
     <color name="appBlue">#206bec</color>
     <color name="appLightBlue">#2257C0</color>
     <color name="appDarkBlue">#040FA9</color>
-    <color name="appWhite">#FBFCFC</color>
+    <color name="appWhite">#f8f8fb</color>
     <color name="appGray">#909CB5</color>
     <color name="appOrangeDark">#F97d22</color>
-    <color name="appOrangeLight">#FFd53d</color>
+    <color name="appOrangeLight">#FB9600</color>
 
 </resources>
