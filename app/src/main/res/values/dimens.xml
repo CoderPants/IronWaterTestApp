@@ -20,4 +20,6 @@
     <dimen name="description_iv_height">210dp</dimen>
     <dimen name="rv_scrollview_width">312dp</dimen>
     <dimen name="description_tv_padding">6dp</dimen>
+    <dimen name="description_tv_margin_bottom">18dp</dimen>
+    <dimen name="description_tv_margin_top">6dp</dimen>
 </resources>
