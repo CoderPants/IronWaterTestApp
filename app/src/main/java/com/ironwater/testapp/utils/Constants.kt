@@ -6,4 +6,6 @@ object Constants {
 
     const val PRODUCT_ID : String = "productId"
     const val HAS_DIALOG : String = "hasDialog"
+
+    const val SCROLL_RV_POSITION : String = "SCROLL_RV_POSITION"
 }

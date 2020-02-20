@@ -42,7 +42,6 @@ class ProductsAdapter : RecyclerView.Adapter<ProductsAdapter.ProductViewHolder>(
         fun bind(product : Product){
             itemView.tv_for_product_id.text = product.isbn.toString()
             itemView.tv_for_product_name.text = product.title
-            //itemView.iv_for_product_image.setImageDrawable( callback.getDrawable(product.image) )
 
             itemView.rv_element_container.setOnClickListener{
                 callback.redirectToDescriptionFragment(productId = product.isbn)
@@ -52,7 +51,5 @@ class ProductsAdapter : RecyclerView.Adapter<ProductsAdapter.ProductViewHolder>(
 
     interface RVCallBack{
         fun redirectToDescriptionFragment(productId : Long)
-
-        //fun getDrawable(imageName : String) : Drawable
     }
 }

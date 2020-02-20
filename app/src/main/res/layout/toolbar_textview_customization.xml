@@ -12,6 +12,7 @@
         android:layout_height="match_parent"
         android:text="@string/about_company"
         android:textAppearance="@style/TextSecondary"
-        android:textColor="@color/appWhite"/>
+        android:textSize="14sp"
+        android:textColor="@color/textButtonToolBarColor"/>
 
 </FrameLayout>

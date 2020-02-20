@@ -9,7 +9,7 @@ class Application : Application() {
 
         /*val inputStream = resources.openRawResource(R.raw.products)
 
-        CoroutineScope(Dispatchers.IO).launch {
+        Coroutinecope(Dispatchers.IO).launch {
             val test = JSONHelper.getDataFromFile(inputStream)
 
             Log.d(Constatnts.LOG_TAG, "Data from json: $test")

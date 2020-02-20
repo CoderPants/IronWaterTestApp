@@ -3,8 +3,7 @@
     <corners android:radius="@dimen/rv_element_corners_radius"/>
 
    <gradient
-        android:startColor="@color/appOrangeDark"
-        android:endColor="@color/appOrangeLight" />
+        android:endColor="@color/appDartPink"
+        android:startColor="@color/colorPrimaryDark" />
 
-   <!--<solid android:color="@color/appLightBlue"/>-->
 </shape>

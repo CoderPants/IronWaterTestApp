@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
 
-<!--
-&lt;!&ndash; Center and start has the same color, cos we have image with corners&ndash;&gt;
-    <gradient
-        android:startColor="@color/appOrangeDark"
-        android:centerColor="@color/appOrangeDark"
-        android:endColor="@color/appOrangeLight" />
--->
-
     <corners android:radius="@dimen/rv_element_corners_radius"/>
 
-    <solid android:color="@color/appOrangeLight"/>
+    <solid android:color="@color/colorPrimaryDark"/>
 </shape>

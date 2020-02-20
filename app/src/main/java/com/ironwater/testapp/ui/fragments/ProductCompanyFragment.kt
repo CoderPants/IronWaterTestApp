@@ -40,10 +40,18 @@ class ProductCompanyFragment : Fragment(R.layout.product_company_fragment) {
         val productID : Long = arguments!!.getLong(Constants.PRODUCT_ID)
         fillFragment(productID)
 
-        isDialogShowing = savedInstanceState?.getBoolean(Constants.HAS_DIALOG) ?: false
+    }
 
-        if(isDialogShowing)
-            dialog.show()
+    override fun onViewStateRestored(savedInstanceState: Bundle?) {
+        super.onViewStateRestored(savedInstanceState)
+
+        if(savedInstanceState != null){
+            isDialogShowing = savedInstanceState.getBoolean(Constants.HAS_DIALOG)
+
+            if(isDialogShowing)
+                dialog.show()
+        }
+
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
